@@ -5,7 +5,7 @@
 
 # Definitions.
 CC = avr-gcc
-CFLAGS = -mmcu=atmega32u2 -Os -Wall -Wstrict-prototypes -Wextra -g -I. -I../../utils -I../../fonts -I../../drivers -I../../drivers/avr
+CFLAGS = -mmcu=atmega32u2 -Os -Wall -Wstrict-prototypes -Wextra -g -I. -I../../utils -I../../fonts -I../../drivers -I../../drivers/avr 
 OBJCOPY = avr-objcopy
 SIZE = avr-size
 DEL = rm
@@ -16,7 +16,7 @@ all: game.out
 
 
 # Compile: create object files from C source files.
-game.o: game.c ../../drivers/avr/system.h display_character.h escrow.h selection.h winner.h
+game.o: game.c ../../drivers/avr/system.h display_character.h escrow.h selection.h winner.h ../../utils/pacer.h ../../utils/tinygl.h ../../drivers/navswitch.h ../../utils/font.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 display_character.o: display_character.c ../../drivers/avr/system.h ../../utils/font.h ../../utils/tinygl.h

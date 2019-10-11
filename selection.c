@@ -1,6 +1,6 @@
 #include "system.h"
 #include "navswitch.h"
-#include "display.h"
+#include "display_character.h"
 
 
 
