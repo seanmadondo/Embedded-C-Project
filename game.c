@@ -1,4 +1,4 @@
-#include "display.h"
+#include "display_character.h"
 #include "escrow.h"
 #include "selection.h"
 #include "winner.h"
