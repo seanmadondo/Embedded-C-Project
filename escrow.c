@@ -1,19 +1,18 @@
 #include "system.h"
-#include "pacer.h"
 #include "navswitch.h"
-#include "tinygl.h"
-#include "../fonts/font5x7_1.h"
+#include "ir_uart.h"
+#include "display_character.h"
 
 char escrow(char selection)
 {
-    char opChar; // place holder for opponent's character
-    char waitChar;
+    char opChar = 'X'; // place holder for opponent's character
+    char waitChar = 'W';
     ir_uart_init();
-    tinygl_init(500);
+
     while (opChar != 'S' && opChar != 'R' && opChar != 'P') {
         // pulse
         // wait recieve idle
-        tinygl_update();
+
 
         if (ir_uart_read_ready_p()) {
             char temp = ir_uart_getc();
@@ -26,8 +25,9 @@ char escrow(char selection)
         if (navswitch_push_event_p(NAVSWITCH_PUSH)) {
             ir_uart_putc(selection);
         }
-        display_character('W');
+        display_character(waitChar);
     }
+    return opChar;
 }
 
 

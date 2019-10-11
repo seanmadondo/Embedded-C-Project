@@ -3,6 +3,8 @@
 #include "display.h"
 
 
+
+
 char makeSelection(void)
 {
     char selectionList[3] = {'R', 'P', 'S'}; // Rock Paper Scissors
@@ -15,8 +17,7 @@ char makeSelection(void)
     // use navswtich to incriment and decrement array index
     while(selected == 0)
     {
-        pacer_wait ();
-        tinygl_update ();
+
         navswitch_update();
 
         // Navswitch up
