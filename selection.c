@@ -1,8 +1,7 @@
 #include "system.h"
-#include "pacer.h"
 #include "navswitch.h"
-#include "tinygl.h"
-#include "../fonts/font5x7_1.h"
+#include "display.h"
+
 
 char makeSelection(void)
 {
