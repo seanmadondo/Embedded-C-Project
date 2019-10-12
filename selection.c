@@ -19,6 +19,7 @@ char makeSelection(void)
     {
 
         navswitch_update();
+        updateChar();
 
         // Navswitch up
         if (navswitch_push_event_p(NAVSWITCH_NORTH)) {
