@@ -39,7 +39,9 @@ void display_character(char character)
 void reset_game(void)
 {
     display_text("PUSH TO RESET");
+    navswitch_update();
     while (navswitch_push_event_p(NAVSWITCH_PUSH) == 0) {
+        pacer_wait();
         update_screen();
         navswitch_update();
     }
