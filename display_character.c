@@ -20,6 +20,7 @@ void display_result(char* result)
     display_text(result);
     navswitch_update();
     while (navswitch_push_event_p(NAVSWITCH_PUSH) == 0) {
+        pacer_wait();
         update_screen();
         navswitch_update();
     }
