@@ -1,10 +1,7 @@
-#include "system.h"
 #include "tinygl.h"
 #include "pacer.h"
 #include "navswitch.h"
 #include "../fonts/font5x7_1.h"
-
-
 
 void update_screen(void)
 {
@@ -36,4 +33,13 @@ void display_character(char character)
     buffer[1] = '\0';
     tinygl_text(buffer);
     update_screen();
+}
+
+void reset_game(void)
+{
+    display_text("PUSH TO RESET");
+    while (navswitch_push_event_p(NAVSWITCH_PUSH) == 0) {
+        update_screen();
+        navswitch_update();
+    }
 }

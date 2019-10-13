@@ -3,6 +3,8 @@
 #ifndef DISPLAY_CHARACTER_H_
 #define DISPLAY_CHARACTER_H_
 
+void reset_game (void);
+
 void update_screen(void);
 
 void screen_init(void);

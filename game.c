@@ -25,6 +25,7 @@ int main(void)
             } else {
                 display_result("LOSE");
             }
-        };
+        }
+        reset_game();
     }
 }
