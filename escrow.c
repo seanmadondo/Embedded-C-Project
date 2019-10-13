@@ -25,8 +25,7 @@ char escrow(char selection)
             char temp = ir_uart_getc();
             if (temp == 'S' || temp == 'R' || temp == 'P') {
                 opChar = temp;
-                recieved = 0;
-                display_character('X');
+                recieved = 1;
 
             }
         }

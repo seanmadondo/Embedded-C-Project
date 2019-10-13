@@ -1,10 +1,8 @@
 #include "system.h"
 #include "tinygl.h"
 #include "pacer.h"
+#include "navswitch.h"
 #include "../fonts/font5x7_1.h"
-
-
-
 
 
 
@@ -20,9 +18,19 @@ void display_text(char* text)
     update_screen();
 }
 
+void display_result(char* result)
+{
+    display_text(result);
+    navswitch_update();
+    while (navswitch_push_event_p(NAVSWITCH_PUSH) == 0) {
+        update_screen();
+        navswitch_update();
+    }
+}
 
 void display_character(char character)
 {
+    tinygl_text_mode_set(TINYGL_TEXT_MODE_STEP);
     char buffer[2];
     buffer[0] = character;
     buffer[1] = '\0';
