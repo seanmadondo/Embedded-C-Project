@@ -1,15 +1,12 @@
+/* game.c is the games caller function
+ * Runs in while loop until terminated. */
+
 #include "display_character.h"
 #include "escrow.h"
 #include "selection.h"
 #include "winner.h"
-#include "system.h"
-#include "pacer.h"
-#include "navswitch.h"
-#include "tinygl.h"
 #include "initialiser.h"
 #include "../fonts/font5x7_1.h"
-
-
 
 int main(void)
 {
@@ -22,11 +19,11 @@ int main(void)
             char opponentSelection = escrow(selection);
             result = winner(selection, opponentSelection);
             if (result == 0) {
-                display_character('D');
+                display_result("DRAW");
             } else if (result == 1) {
-                display_character('W');
+                display_result("WIN");
             } else {
-                display_character('L');
+                display_result("LOSE");
             }
         };
     }
