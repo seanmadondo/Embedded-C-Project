@@ -1,6 +1,7 @@
 #include "system.h"
 #include "navswitch.h"
 #include "display_character.h"
+#include "pacer.h"
 
 
 
@@ -11,15 +12,13 @@ char makeSelection(void)
     int index = 0;
     int selected = 0;
     char selectedChar;
-    navswitch_init ();
-
 
     // use navswtich to incriment and decrement array index
-    while(selected == 0)
-    {
+    while(selected == 0) {
+        pacer_wait();
 
         navswitch_update();
-        updateChar();
+        //updateChar();
 
         // Navswitch up
         if (navswitch_push_event_p(NAVSWITCH_NORTH)) {

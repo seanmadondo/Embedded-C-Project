@@ -4,24 +4,22 @@
 #include "display_character.h"
 #include "pacer.h"
 
-#define PACER_RATE 500
+
 
 char escrow(char selection)
 {
     char opChar = 'X'; // place holder for opponent's character
-    char waitChar = 'W';
+    char* loopMessage = "PRESS TO SEND\0";
     int recieved = 0;
     int sent = 0;
-    ir_uart_init();
-    pacer_init (PACER_RATE);
-    display_character(waitChar);
-    
+    display_text(loopMessage);
+
     while (recieved == 0 || sent == 0) {
         // pulse
         // wait recieve idle
         pacer_wait ();
         navswitch_update();
-        updateChar();
+        update_screen();
 
         if (ir_uart_read_ready_p()) {
             char temp = ir_uart_getc();
@@ -36,7 +34,7 @@ char escrow(char selection)
             ir_uart_putc(selection);
             sent = 1;
         }
-        
+
     }
     return opChar;
 }

@@ -5,7 +5,7 @@
 
 # Definitions.
 CC = avr-gcc
-CFLAGS = -mmcu=atmega32u2 -Os -Wall -Wstrict-prototypes -Wextra -g -I. -I../../utils -I../../fonts -I../../drivers -I../../drivers/avr 
+CFLAGS = -mmcu=atmega32u2 -Os -Wall -Wstrict-prototypes -Wextra -g -I. -I../../utils -I../../fonts -I../../drivers -I../../drivers/avr
 OBJCOPY = avr-objcopy
 SIZE = avr-size
 DEL = rm
@@ -16,13 +16,16 @@ all: game.out
 
 
 # Compile: create object files from C source files.
-game.o: game.c ../../drivers/avr/system.h display_character.h escrow.h selection.h winner.h ../../utils/pacer.h ../../utils/tinygl.h ../../drivers/navswitch.h ../../utils/font.h
+game.o: game.c ../../drivers/avr/system.h display_character.h escrow.h selection.h winner.h ../../utils/pacer.h ../../utils/tinygl.h ../../drivers/navswitch.h ../../utils/font.h initialiser.h
+	$(CC) -c $(CFLAGS) $< -o $@
+
+initialiser.o: initialiser.c ../../drivers/avr/system.h ../../utils/pacer.h ../../utils/tinygl.h ../../drivers/navswitch.h ../../utils/font.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 display_character.o: display_character.c ../../drivers/avr/system.h ../../utils/font.h ../../utils/tinygl.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
-selection.o: selection.c ../../drivers/navswitch.h ../../drivers/avr/system.h display_character.h
+selection.o: selection.c ../../drivers/navswitch.h ../../drivers/avr/system.h display_character.h ../../utils/pacer.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 winner.o: winner.c
@@ -73,7 +76,7 @@ tinygl.o: ../../utils/tinygl.c ../../drivers/avr/system.h ../../drivers/display.
 
 
 # Link: create ELF output file from object files.
-game.out: game.o system.o display_character.o selection.o winner.o escrow.o ir_uart.o pio.o prescale.o system.o timer.o timer0.o usart1.o display.o ledmat.o navswitch.o font.o pacer.o tinygl.o
+game.out: game.o system.o display_character.o selection.o winner.o escrow.o ir_uart.o pio.o prescale.o system.o timer.o timer0.o usart1.o display.o ledmat.o navswitch.o font.o pacer.o tinygl.o initialiser.o
 	$(CC) $(CFLAGS) $^ -o $@ -lm
 	$(SIZE) $@
 

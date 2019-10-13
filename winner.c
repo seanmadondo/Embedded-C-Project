@@ -1,5 +1,6 @@
 /* Winner Function to decide who won */
 
+
 int winner(char player1, char player2)
 {
 
@@ -27,3 +28,5 @@ int winner(char player1, char player2)
 
     return win;
 }
+
+

@@ -6,21 +6,15 @@
 #include "pacer.h"
 #include "navswitch.h"
 #include "tinygl.h"
+#include "initialiser.h"
 #include "../fonts/font5x7_1.h"
 
-#define PACER_RATE 500
-#define MESSAGE_RATE 10
-#define LOOP_RATE 500
+
 
 int main(void)
 {
-    system_init();
-    tinygl_init(LOOP_RATE);
-    tinygl_font_set (&font5x7_1);
-    tinygl_text_speed_set (MESSAGE_RATE);
-    navswitch_init ();
-    pacer_init (PACER_RATE);
-    
+    initialise_all();
+
     while (1) {
         int result = 0;
         while (result == 0) {
