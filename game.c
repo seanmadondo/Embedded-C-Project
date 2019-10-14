@@ -1,5 +1,15 @@
+/** @file game.c
+ * @author Julian Topp, Sean Madondo
+ * @date 14/0/2019
+ * @brief Main loop for game
+ */
+
 /* game.c is the games caller function
- * Runs in while loop until terminated. */
+ * Runs in while loop until terminated.
+ * Calls function for self selection and to receive oponent selection
+ * Display Result (Draw, Win, Lose)
+ * Option to continue playing/reset game via reset() call
+ * Authors: Julian Topp, Sean Madondo */
 
 #include "display_character.h"
 #include "escrow.h"
