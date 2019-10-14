@@ -1,13 +1,24 @@
+/** @file display_character.c
+ * @author Julian Topp, Sean Madondo
+ * @date 14/0/2019
+ * @brief Display functions
+ */
+
+/* File contains all required display functions
+ * Displays characters via use of tinygl module */
+
 #include "tinygl.h"
 #include "pacer.h"
 #include "navswitch.h"
 #include "../fonts/font5x7_1.h"
 
+// Update display and advance message.
 void update_screen(void)
 {
     tinygl_update();
 }
 
+//Display Text on LED (scrolls with feature from tinygl)
 void display_text(char* text)
 {
     tinygl_text(text);
@@ -15,6 +26,7 @@ void display_text(char* text)
     update_screen();
 }
 
+//Function used to display final result after winner is identified
 void display_result(char* result)
 {
     display_text(result);
@@ -26,6 +38,7 @@ void display_result(char* result)
     }
 }
 
+//Display character on LED
 void display_character(char character)
 {
     tinygl_text_mode_set(TINYGL_TEXT_MODE_STEP);
@@ -36,6 +49,7 @@ void display_character(char character)
     update_screen();
 }
 
+// Function to reset game, prompts user to 'push to reset'
 void reset_game(void)
 {
     display_text("PUSH TO RESET");
