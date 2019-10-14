@@ -1,6 +1,6 @@
 /** @file game.c
- * @author Julian Topp, Sean Madondo
- * @date 14/0/2019
+ * @author Julian Topp (JAT191), Sean Madondo (SMA297)
+ * @date 14/10/2019
  * @brief Main loop for game
  */
 
