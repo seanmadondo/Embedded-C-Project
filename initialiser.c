@@ -1,3 +1,12 @@
+/** @file initialiser.c
+ * @author Julian Topp, Sean Madondo
+ * @date 14/0/2019
+ * @brief Initialise Modules
+ */
+
+/* Function for initialisation of all required modules
+ * Called with "initiliser()" */
+
 #include "system.h"
 #include "navswitch.h"
 #include "tinygl.h"
