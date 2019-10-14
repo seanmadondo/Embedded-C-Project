@@ -13,6 +13,8 @@ void reset_game (void);
 // Update display and advance message.
 void update_screen(void);
 
+void clear_screen(void);
+
 // Initialise Screen
 void screen_init(void);
 

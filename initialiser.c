@@ -14,8 +14,8 @@
 #include "pacer.h"
 #include "../fonts/font5x7_1.h"
 
-#define LOOP_RATE 500
-#define PACER_RATE 500
+#define LOOP_RATE 1000
+#define PACER_RATE 1000
 #define MESSAGE_RATE 15
 
 void initialise_all(void)

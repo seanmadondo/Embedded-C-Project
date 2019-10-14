@@ -22,7 +22,7 @@ game.o: game.c ../../drivers/avr/system.h display_character.h escrow.h selection
 initialiser.o: initialiser.c ../../drivers/avr/system.h ../../utils/pacer.h ../../utils/tinygl.h ../../drivers/navswitch.h ../../utils/font.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
-display_character.o: display_character.c ../../drivers/avr/system.h ../../utils/font.h ../../utils/tinygl.h ../../drivers/navswitch.h
+display_character.o: display_character.c ../../drivers/avr/system.h ../../utils/font.h ../../utils/tinygl.h ../../drivers/navswitch.h ../../drivers/avr/timer.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 selection.o: selection.c ../../drivers/navswitch.h ../../drivers/avr/system.h display_character.h ../../utils/pacer.h
