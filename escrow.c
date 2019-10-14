@@ -1,10 +1,18 @@
+/** @file escrow.c
+ * @author Julian Topp, Sean Madondo
+ * @date 14/0/2019
+ * @brief user to user communication using IR
+ */
+
+/* Fuction to receive opponets character via IR
+ * After user makes selection, user is prompted "Press to send"
+ * Function returns opponent's character */
+
 #include "system.h"
 #include "navswitch.h"
 #include "ir_uart.h"
 #include "display_character.h"
 #include "pacer.h"
-
-
 
 char escrow(char selection)
 {
