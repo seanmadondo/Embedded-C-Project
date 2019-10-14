@@ -1,22 +1,41 @@
-Use this directory for your final game and its module(s).  Only the
-files in this directory will be marked.
+UCFK Rock, Paper, Scissors GAME
+Authors: JUlIAN TOPP (jat191), Sean Madondo (SMA297)
+Date: 15/10/2019
 
-Ensure you use the git add command to add your files to the git
-repository.  For example,
+1. SETUP/STARTUP GAME
+ - Open game directory in terminal
+ - Please ensure the UCFK is completely reset by pressing the RESET button 
 
-git add module.c
+2. Playing the game
+ - Displays characters {ROCK, PAPER, SCISSORS}
+ - User can navigate up or down using the navigation stick. User can then push to select.
+ - Screen then advises user to "PUSH TO SEND" with scrolling text. 
+ - When both Players have sent their character, The result of the game is displayed on the screen. Specifically {"DRAW", "WIN", "LOSE"}.
+ - User can the push the Navigation button once more and will be greated with "PRESS TO RESTART" with scrolling text.
+ - Game restarts until RESET.
 
-Then use the git commit command to add the file contents
 
-git commit -m "Added file" module.c
+FILE LIST
+---------
+game.c (Main game loop)
+initialiser.c
+inititliser.h
+display_character.c
+display_character.h
+ecrow.c
+escrow.h
+selection.c
+selection.h
+winner.c
+winner.h
 
-The use the git push command to copy the changes to the remote git server
+----------------------
+USEFUL COMMAND LINE ARGUMENTS
+----------------------
+make 
+make clean
+make program
 
-git push
 
-AS OF 7.41PM 11/10 ALL FILES COMPILE. BACK UP ON JULIAN VBOX
 
-AS OF 8.53PM 11/10 PROGRAM RUNS BUT HAS BUG WHERE ESCROW IS BREAKING THE WHILE LOOP BEFORE ANYTHING IS SENT OR RECIEVED
-CAUSING MAIN TO CYCLE BACK TO SELECTION MENU
 
-7.49PM 12/10/2019 BUG IN ESCROW.C FIXED BY ADDING PACER FUNCTION AND NAVSWITCH_UPDATE(), MAKEFILE MODIFIED TO SUIT THESE CHANGES
