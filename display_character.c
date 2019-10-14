@@ -40,7 +40,6 @@ void display_text(char* text)
 //Function used to display final result after winner is identified
 void display_result(char* result)
 {
-    clear_screen();
     display_text(result);
     navswitch_update();
     while (navswitch_push_event_p(NAVSWITCH_PUSH) == 0) {
@@ -64,7 +63,6 @@ void display_character(char character)
 // Function to reset game, prompts user to 'push to reset'
 void reset_game(void)
 {
-    clear_screen();
     display_text("PUSH TO RESET\0");
     navswitch_update();
     while (navswitch_push_event_p(NAVSWITCH_PUSH) == 0) {
