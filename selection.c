@@ -1,10 +1,16 @@
+/** @file selection.c
+ * @author Julian Topp, Sean Madondo
+ * @date 14/0/2019
+ * @brief Make user selection
+ */
+
+/* Function to make user selection using call to navswitch push event
+ * Returns the selected char */
+
 #include "system.h"
 #include "navswitch.h"
 #include "display_character.h"
 #include "pacer.h"
-
-
-
 
 char makeSelection(void)
 {
