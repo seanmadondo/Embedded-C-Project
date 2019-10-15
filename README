@@ -20,8 +20,8 @@ FILE LIST
 game.c (Main game loop)
 initialiser.c
 inititliser.h
-display_character.c
-display_character.h
+screen.c
+screen.h
 ecrow.c
 escrow.h
 selection.c
