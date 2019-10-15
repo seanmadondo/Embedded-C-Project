@@ -1,6 +1,6 @@
 # File:   Makefile
-# Author: M. P. Hayes, UCECE
-# Date:   12 Sep 2010
+# Author: Julian Topp, Sean Madondo
+# Date:   15/10/2019
 # Descr:  Makefile for game
 
 # Definitions.
