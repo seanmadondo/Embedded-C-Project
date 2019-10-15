@@ -21,7 +21,7 @@ void update_screen(void)
 
 void clear_screen(void)
 {
-    int ticks = 20000;
+    int ticks = 500;
     tinygl_clear();
     update_screen();
     timer_init();
