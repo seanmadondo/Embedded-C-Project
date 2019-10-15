@@ -8,7 +8,7 @@
  * After user makes selection, user is prompted "Press to send"
  * Function returns opponent's character */
 
-#include "system.h"
+
 #include "navswitch.h"
 #include "ir_uart.h"
 #include "display_character.h"

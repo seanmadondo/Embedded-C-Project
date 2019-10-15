@@ -7,7 +7,6 @@
 /* Function to make user selection using call to navswitch push event
  * Returns the selected char */
 
-#include "system.h"
 #include "navswitch.h"
 #include "display_character.h"
 #include "pacer.h"

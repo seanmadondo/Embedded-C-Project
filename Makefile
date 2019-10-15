@@ -16,22 +16,22 @@ all: game.out
 
 
 # Compile: create object files from C source files.
-game.o: game.c ../../drivers/avr/system.h display_character.h escrow.h selection.h winner.h ../../utils/pacer.h ../../utils/tinygl.h ../../drivers/navswitch.h ../../utils/font.h initialiser.h display_character.h
+game.o: game.c display_character.h escrow.h selection.h winner.h initialiser.h display_character.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 initialiser.o: initialiser.c ../../drivers/avr/system.h ../../utils/pacer.h ../../utils/tinygl.h ../../drivers/navswitch.h ../../utils/font.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
-display_character.o: display_character.c ../../drivers/avr/system.h ../../utils/font.h ../../utils/tinygl.h ../../drivers/navswitch.h ../../drivers/avr/timer.h
+display_character.o: display_character.c ../../utils/font.h ../../utils/tinygl.h ../../drivers/navswitch.h ../../drivers/avr/timer.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
-selection.o: selection.c ../../drivers/navswitch.h ../../drivers/avr/system.h display_character.h ../../utils/pacer.h
+selection.o: selection.c ../../drivers/navswitch.h display_character.h ../../utils/pacer.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 winner.o: winner.c
 	$(CC) -c $(CFLAGS) $< -o $@
 
-escrow.o: escrow.c display_character.h ../../drivers/navswitch.h ../../drivers/avr/system.h ../../drivers/avr/ir_uart.h ../../utils/pacer.h
+escrow.o: escrow.c display_character.h ../../drivers/navswitch.h ../../drivers/avr/ir_uart.h ../../utils/pacer.h
 	$(CC) -c $(CFLAGS) $< -o $@
 
 ir_uart.o: ../../drivers/avr/ir_uart.c ../../drivers/avr/ir_uart.h ../../drivers/avr/pio.h ../../drivers/avr/system.h ../../drivers/avr/timer0.h ../../drivers/avr/usart1.h
