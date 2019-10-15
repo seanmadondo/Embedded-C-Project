@@ -8,7 +8,7 @@
  * Returns the selected char */
 
 #include "navswitch.h"
-#include "display_character.h"
+#include "screen.h"
 #include "pacer.h"
 
 char makeSelection(void)

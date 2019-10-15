@@ -11,7 +11,7 @@
 
 #include "navswitch.h"
 #include "ir_uart.h"
-#include "display_character.h"
+#include "screen.h"
 #include "pacer.h"
 
 char escrow(char selection)

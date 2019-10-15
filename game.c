@@ -11,7 +11,7 @@
  * Option to continue playing/reset game via reset() call
  * Authors: Julian Topp, Sean Madondo */
 
-#include "display_character.h"
+#include "screen.h"
 #include "escrow.h"
 #include "selection.h"
 #include "winner.h"
